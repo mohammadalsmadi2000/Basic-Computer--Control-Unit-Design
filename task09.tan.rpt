@@ -1,0 +1,369 @@
+Classic Timing Analyzer report for task09
+Sun Aug 14 15:18:17 2022
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------+----------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                       ; To                         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------+----------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 3.951 ns                                       ; inr                        ; Counter:CountMap|output[3] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.409 ns                                       ; Counter:CountMap|output[1] ; output[28]                 ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 10.886 ns                                      ; IR[12]                     ; output[13]                 ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.897 ns                                      ; clr                        ; Counter:CountMap|output[3] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[0] ; Counter:CountMap|output[3] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                            ;                            ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+----------------------------+----------------------------+------------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                           ;
++-------+------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                       ; To                         ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[0] ; Counter:CountMap|output[3] ; clk        ; clk      ; None                        ; None                      ; 1.416 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[0] ; Counter:CountMap|output[2] ; clk        ; clk      ; None                        ; None                      ; 1.345 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[1] ; Counter:CountMap|output[3] ; clk        ; clk      ; None                        ; None                      ; 1.316 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[2] ; Counter:CountMap|output[3] ; clk        ; clk      ; None                        ; None                      ; 1.310 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[0] ; Counter:CountMap|output[1] ; clk        ; clk      ; None                        ; None                      ; 1.274 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[1] ; Counter:CountMap|output[2] ; clk        ; clk      ; None                        ; None                      ; 1.245 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[2] ; Counter:CountMap|output[2] ; clk        ; clk      ; None                        ; None                      ; 0.924 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[3] ; Counter:CountMap|output[3] ; clk        ; clk      ; None                        ; None                      ; 0.901 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[0] ; Counter:CountMap|output[0] ; clk        ; clk      ; None                        ; None                      ; 0.891 ns                ;
+; N/A   ; Restricted to 420.17 MHz ( period = 2.380 ns ) ; Counter:CountMap|output[1] ; Counter:CountMap|output[1] ; clk        ; clk      ; None                        ; None                      ; 0.862 ns                ;
++-------+------------------------------------------------+----------------------------+----------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------+
+; tsu                                                                              ;
++-------+--------------+------------+------+----------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                         ; To Clock ;
++-------+--------------+------------+------+----------------------------+----------+
+; N/A   ; None         ; 3.951 ns   ; inr  ; Counter:CountMap|output[3] ; clk      ;
+; N/A   ; None         ; 3.880 ns   ; inr  ; Counter:CountMap|output[2] ; clk      ;
+; N/A   ; None         ; 3.809 ns   ; inr  ; Counter:CountMap|output[1] ; clk      ;
+; N/A   ; None         ; 3.422 ns   ; inr  ; Counter:CountMap|output[0] ; clk      ;
+; N/A   ; None         ; 3.127 ns   ; clr  ; Counter:CountMap|output[2] ; clk      ;
+; N/A   ; None         ; 3.127 ns   ; clr  ; Counter:CountMap|output[1] ; clk      ;
+; N/A   ; None         ; 3.127 ns   ; clr  ; Counter:CountMap|output[0] ; clk      ;
+; N/A   ; None         ; 3.127 ns   ; clr  ; Counter:CountMap|output[3] ; clk      ;
++-------+--------------+------------+------+----------------------------+----------+
+
+
++------------------------------------------------------------------------------------------+
+; tco                                                                                      ;
++-------+--------------+------------+----------------------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From                       ; To         ; From Clock ;
++-------+--------------+------------+----------------------------+------------+------------+
+; N/A   ; None         ; 7.409 ns   ; Counter:CountMap|output[1] ; output[28] ; clk        ;
+; N/A   ; None         ; 7.403 ns   ; Counter:CountMap|output[1] ; output[26] ; clk        ;
+; N/A   ; None         ; 7.395 ns   ; Counter:CountMap|output[1] ; output[29] ; clk        ;
+; N/A   ; None         ; 7.393 ns   ; Counter:CountMap|output[1] ; output[27] ; clk        ;
+; N/A   ; None         ; 7.340 ns   ; Counter:CountMap|output[1] ; output[30] ; clk        ;
+; N/A   ; None         ; 7.325 ns   ; Counter:CountMap|output[1] ; output[31] ; clk        ;
+; N/A   ; None         ; 7.324 ns   ; Counter:CountMap|output[1] ; output[24] ; clk        ;
+; N/A   ; None         ; 7.323 ns   ; Counter:CountMap|output[1] ; output[35] ; clk        ;
+; N/A   ; None         ; 7.299 ns   ; Counter:CountMap|output[1] ; output[36] ; clk        ;
+; N/A   ; None         ; 7.294 ns   ; Counter:CountMap|output[1] ; output[34] ; clk        ;
+; N/A   ; None         ; 7.293 ns   ; Counter:CountMap|output[0] ; output[35] ; clk        ;
+; N/A   ; None         ; 7.292 ns   ; Counter:CountMap|output[1] ; output[33] ; clk        ;
+; N/A   ; None         ; 7.264 ns   ; Counter:CountMap|output[0] ; output[33] ; clk        ;
+; N/A   ; None         ; 7.260 ns   ; Counter:CountMap|output[0] ; output[36] ; clk        ;
+; N/A   ; None         ; 7.239 ns   ; Counter:CountMap|output[1] ; output[25] ; clk        ;
+; N/A   ; None         ; 7.219 ns   ; Counter:CountMap|output[0] ; output[34] ; clk        ;
+; N/A   ; None         ; 7.161 ns   ; Counter:CountMap|output[2] ; output[36] ; clk        ;
+; N/A   ; None         ; 7.146 ns   ; Counter:CountMap|output[0] ; output[28] ; clk        ;
+; N/A   ; None         ; 7.140 ns   ; Counter:CountMap|output[0] ; output[29] ; clk        ;
+; N/A   ; None         ; 7.139 ns   ; Counter:CountMap|output[0] ; output[27] ; clk        ;
+; N/A   ; None         ; 7.115 ns   ; Counter:CountMap|output[2] ; output[34] ; clk        ;
+; N/A   ; None         ; 7.115 ns   ; Counter:CountMap|output[2] ; output[33] ; clk        ;
+; N/A   ; None         ; 7.112 ns   ; Counter:CountMap|output[2] ; output[35] ; clk        ;
+; N/A   ; None         ; 7.106 ns   ; Counter:CountMap|output[0] ; output[26] ; clk        ;
+; N/A   ; None         ; 7.101 ns   ; Counter:CountMap|output[1] ; output[22] ; clk        ;
+; N/A   ; None         ; 7.076 ns   ; Counter:CountMap|output[0] ; output[31] ; clk        ;
+; N/A   ; None         ; 7.069 ns   ; Counter:CountMap|output[1] ; output[21] ; clk        ;
+; N/A   ; None         ; 7.067 ns   ; Counter:CountMap|output[1] ; output[32] ; clk        ;
+; N/A   ; None         ; 7.067 ns   ; Counter:CountMap|output[0] ; output[30] ; clk        ;
+; N/A   ; None         ; 7.061 ns   ; Counter:CountMap|output[1] ; output[23] ; clk        ;
+; N/A   ; None         ; 7.060 ns   ; Counter:CountMap|output[0] ; output[24] ; clk        ;
+; N/A   ; None         ; 7.055 ns   ; Counter:CountMap|output[3] ; output[28] ; clk        ;
+; N/A   ; None         ; 7.033 ns   ; Counter:CountMap|output[3] ; output[29] ; clk        ;
+; N/A   ; None         ; 7.022 ns   ; Counter:CountMap|output[3] ; output[36] ; clk        ;
+; N/A   ; None         ; 7.009 ns   ; Counter:CountMap|output[3] ; output[26] ; clk        ;
+; N/A   ; None         ; 7.007 ns   ; Counter:CountMap|output[3] ; output[35] ; clk        ;
+; N/A   ; None         ; 6.995 ns   ; Counter:CountMap|output[3] ; output[27] ; clk        ;
+; N/A   ; None         ; 6.984 ns   ; Counter:CountMap|output[0] ; output[25] ; clk        ;
+; N/A   ; None         ; 6.977 ns   ; Counter:CountMap|output[3] ; output[33] ; clk        ;
+; N/A   ; None         ; 6.977 ns   ; Counter:CountMap|output[3] ; output[30] ; clk        ;
+; N/A   ; None         ; 6.976 ns   ; Counter:CountMap|output[3] ; output[34] ; clk        ;
+; N/A   ; None         ; 6.972 ns   ; Counter:CountMap|output[3] ; output[31] ; clk        ;
+; N/A   ; None         ; 6.970 ns   ; Counter:CountMap|output[3] ; output[24] ; clk        ;
+; N/A   ; None         ; 6.914 ns   ; Counter:CountMap|output[2] ; output[28] ; clk        ;
+; N/A   ; None         ; 6.891 ns   ; Counter:CountMap|output[2] ; output[29] ; clk        ;
+; N/A   ; None         ; 6.868 ns   ; Counter:CountMap|output[2] ; output[26] ; clk        ;
+; N/A   ; None         ; 6.857 ns   ; Counter:CountMap|output[2] ; output[27] ; clk        ;
+; N/A   ; None         ; 6.856 ns   ; Counter:CountMap|output[3] ; output[25] ; clk        ;
+; N/A   ; None         ; 6.836 ns   ; Counter:CountMap|output[2] ; output[30] ; clk        ;
+; N/A   ; None         ; 6.830 ns   ; Counter:CountMap|output[2] ; output[31] ; clk        ;
+; N/A   ; None         ; 6.828 ns   ; Counter:CountMap|output[2] ; output[24] ; clk        ;
+; N/A   ; None         ; 6.823 ns   ; Counter:CountMap|output[0] ; output[22] ; clk        ;
+; N/A   ; None         ; 6.815 ns   ; Counter:CountMap|output[0] ; output[23] ; clk        ;
+; N/A   ; None         ; 6.815 ns   ; Counter:CountMap|output[0] ; output[21] ; clk        ;
+; N/A   ; None         ; 6.804 ns   ; Counter:CountMap|output[0] ; output[32] ; clk        ;
+; N/A   ; None         ; 6.733 ns   ; Counter:CountMap|output[3] ; output[22] ; clk        ;
+; N/A   ; None         ; 6.713 ns   ; Counter:CountMap|output[3] ; output[32] ; clk        ;
+; N/A   ; None         ; 6.711 ns   ; Counter:CountMap|output[2] ; output[25] ; clk        ;
+; N/A   ; None         ; 6.707 ns   ; Counter:CountMap|output[3] ; output[23] ; clk        ;
+; N/A   ; None         ; 6.703 ns   ; Counter:CountMap|output[3] ; output[21] ; clk        ;
+; N/A   ; None         ; 6.591 ns   ; Counter:CountMap|output[2] ; output[22] ; clk        ;
+; N/A   ; None         ; 6.572 ns   ; Counter:CountMap|output[2] ; output[32] ; clk        ;
+; N/A   ; None         ; 6.566 ns   ; Counter:CountMap|output[2] ; output[23] ; clk        ;
+; N/A   ; None         ; 6.561 ns   ; Counter:CountMap|output[2] ; output[21] ; clk        ;
++-------+--------------+------------+----------------------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; tpd                                                               ;
++-------+-------------------+-----------------+--------+------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To         ;
++-------+-------------------+-----------------+--------+------------+
+; N/A   ; None              ; 10.886 ns       ; IR[12] ; output[13] ;
+; N/A   ; None              ; 10.850 ns       ; IR[12] ; output[16] ;
+; N/A   ; None              ; 10.849 ns       ; IR[12] ; output[12] ;
+; N/A   ; None              ; 10.685 ns       ; IR[12] ; output[19] ;
+; N/A   ; None              ; 10.674 ns       ; IR[12] ; output[17] ;
+; N/A   ; None              ; 10.632 ns       ; IR[12] ; output[14] ;
+; N/A   ; None              ; 10.618 ns       ; IR[12] ; output[15] ;
+; N/A   ; None              ; 10.611 ns       ; IR[12] ; output[18] ;
+; N/A   ; None              ; 9.776 ns        ; IR[14] ; output[16] ;
+; N/A   ; None              ; 9.770 ns        ; IR[14] ; output[13] ;
+; N/A   ; None              ; 9.750 ns        ; IR[13] ; output[13] ;
+; N/A   ; None              ; 9.734 ns        ; IR[14] ; output[12] ;
+; N/A   ; None              ; 9.717 ns        ; IR[13] ; output[16] ;
+; N/A   ; None              ; 9.704 ns        ; IR[13] ; output[12] ;
+; N/A   ; None              ; 9.619 ns        ; IR[14] ; output[19] ;
+; N/A   ; None              ; 9.602 ns        ; IR[14] ; output[17] ;
+; N/A   ; None              ; 9.583 ns        ; IR[13] ; output[19] ;
+; N/A   ; None              ; 9.543 ns        ; IR[14] ; output[18] ;
+; N/A   ; None              ; 9.539 ns        ; IR[13] ; output[14] ;
+; N/A   ; None              ; 9.528 ns        ; IR[13] ; output[17] ;
+; N/A   ; None              ; 9.520 ns        ; IR[14] ; output[14] ;
+; N/A   ; None              ; 9.511 ns        ; IR[13] ; output[18] ;
+; N/A   ; None              ; 9.511 ns        ; IR[13] ; output[15] ;
+; N/A   ; None              ; 9.509 ns        ; IR[14] ; output[15] ;
+; N/A   ; None              ; 8.867 ns        ; IR[7]  ; output[7]  ;
+; N/A   ; None              ; 8.860 ns        ; IR[8]  ; output[8]  ;
+; N/A   ; None              ; 8.837 ns        ; IR[4]  ; output[4]  ;
+; N/A   ; None              ; 8.827 ns        ; IR[2]  ; output[2]  ;
+; N/A   ; None              ; 8.801 ns        ; IR[1]  ; output[1]  ;
+; N/A   ; None              ; 8.800 ns        ; IR[11] ; output[11] ;
+; N/A   ; None              ; 8.779 ns        ; IR[6]  ; output[6]  ;
+; N/A   ; None              ; 8.623 ns        ; IR[10] ; output[10] ;
+; N/A   ; None              ; 8.150 ns        ; IR[3]  ; output[3]  ;
+; N/A   ; None              ; 7.990 ns        ; IR[0]  ; output[0]  ;
+; N/A   ; None              ; 7.966 ns        ; IR[5]  ; output[5]  ;
+; N/A   ; None              ; 7.960 ns        ; IR[15] ; output[20] ;
+; N/A   ; None              ; 7.956 ns        ; IR[9]  ; output[9]  ;
++-------+-------------------+-----------------+--------+------------+
+
+
++----------------------------------------------------------------------------------------+
+; th                                                                                     ;
++---------------+-------------+-----------+------+----------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                         ; To Clock ;
++---------------+-------------+-----------+------+----------------------------+----------+
+; N/A           ; None        ; -2.897 ns ; clr  ; Counter:CountMap|output[2] ; clk      ;
+; N/A           ; None        ; -2.897 ns ; clr  ; Counter:CountMap|output[1] ; clk      ;
+; N/A           ; None        ; -2.897 ns ; clr  ; Counter:CountMap|output[0] ; clk      ;
+; N/A           ; None        ; -2.897 ns ; clr  ; Counter:CountMap|output[3] ; clk      ;
+; N/A           ; None        ; -3.192 ns ; inr  ; Counter:CountMap|output[0] ; clk      ;
+; N/A           ; None        ; -3.579 ns ; inr  ; Counter:CountMap|output[1] ; clk      ;
+; N/A           ; None        ; -3.650 ns ; inr  ; Counter:CountMap|output[2] ; clk      ;
+; N/A           ; None        ; -3.721 ns ; inr  ; Counter:CountMap|output[3] ; clk      ;
++---------------+-------------+-----------+------+----------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sun Aug 14 15:18:17 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off task09 -c task09 --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" Internal fmax is restricted to 420.17 MHz between source register "Counter:CountMap|output[0]" and destination register "Counter:CountMap|output[3]"
+    Info: fmax restricted to clock pin edge rate 2.38 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 1.416 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X1_Y32_N3; Fanout = 18; REG Node = 'Counter:CountMap|output[0]'
+            Info: 2: + IC(0.387 ns) + CELL(0.393 ns) = 0.780 ns; Loc. = LCCOMB_X1_Y32_N2; Fanout = 2; COMB Node = 'Counter:CountMap|output[0]~5'
+            Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 0.851 ns; Loc. = LCCOMB_X1_Y32_N4; Fanout = 2; COMB Node = 'Counter:CountMap|output[1]~7'
+            Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 0.922 ns; Loc. = LCCOMB_X1_Y32_N6; Fanout = 1; COMB Node = 'Counter:CountMap|output[2]~9'
+            Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 1.332 ns; Loc. = LCCOMB_X1_Y32_N8; Fanout = 1; COMB Node = 'Counter:CountMap|output[3]~10'
+            Info: 6: + IC(0.000 ns) + CELL(0.084 ns) = 1.416 ns; Loc. = LCFF_X1_Y32_N9; Fanout = 17; REG Node = 'Counter:CountMap|output[3]'
+            Info: Total cell delay = 1.029 ns ( 72.67 % )
+            Info: Total interconnect delay = 0.387 ns ( 27.33 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "clk" to destination register is 2.670 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X1_Y32_N9; Fanout = 17; REG Node = 'Counter:CountMap|output[3]'
+                Info: Total cell delay = 1.536 ns ( 57.53 % )
+                Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+            Info: - Longest clock path from clock "clk" to source register is 2.670 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+                Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
+                Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X1_Y32_N3; Fanout = 18; REG Node = 'Counter:CountMap|output[0]'
+                Info: Total cell delay = 1.536 ns ( 57.53 % )
+                Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+        Info: + Micro clock to output delay of source is 0.250 ns
+        Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "Counter:CountMap|output[3]" (data pin = "inr", clock pin = "clk") is 3.951 ns
+    Info: + Longest pin to register delay is 6.657 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_F6; Fanout = 2; PIN Node = 'inr'
+        Info: 2: + IC(4.765 ns) + CELL(0.414 ns) = 6.021 ns; Loc. = LCCOMB_X1_Y32_N2; Fanout = 2; COMB Node = 'Counter:CountMap|output[0]~5'
+        Info: 3: + IC(0.000 ns) + CELL(0.071 ns) = 6.092 ns; Loc. = LCCOMB_X1_Y32_N4; Fanout = 2; COMB Node = 'Counter:CountMap|output[1]~7'
+        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 6.163 ns; Loc. = LCCOMB_X1_Y32_N6; Fanout = 1; COMB Node = 'Counter:CountMap|output[2]~9'
+        Info: 5: + IC(0.000 ns) + CELL(0.410 ns) = 6.573 ns; Loc. = LCCOMB_X1_Y32_N8; Fanout = 1; COMB Node = 'Counter:CountMap|output[3]~10'
+        Info: 6: + IC(0.000 ns) + CELL(0.084 ns) = 6.657 ns; Loc. = LCFF_X1_Y32_N9; Fanout = 17; REG Node = 'Counter:CountMap|output[3]'
+        Info: Total cell delay = 1.892 ns ( 28.42 % )
+        Info: Total interconnect delay = 4.765 ns ( 71.58 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 2.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X1_Y32_N9; Fanout = 17; REG Node = 'Counter:CountMap|output[3]'
+        Info: Total cell delay = 1.536 ns ( 57.53 % )
+        Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+Info: tco from clock "clk" to destination pin "output[28]" through register "Counter:CountMap|output[1]" is 7.409 ns
+    Info: + Longest clock path from clock "clk" to source register is 2.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X1_Y32_N5; Fanout = 18; REG Node = 'Counter:CountMap|output[1]'
+        Info: Total cell delay = 1.536 ns ( 57.53 % )
+        Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 4.489 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X1_Y32_N5; Fanout = 18; REG Node = 'Counter:CountMap|output[1]'
+        Info: 2: + IC(0.639 ns) + CELL(0.398 ns) = 1.037 ns; Loc. = LCCOMB_X1_Y32_N30; Fanout = 1; COMB Node = 'decoder4x16:Dec4to16Map|decoder3x8:d2|output[2]~0'
+        Info: 3: + IC(0.790 ns) + CELL(2.662 ns) = 4.489 ns; Loc. = PIN_B2; Fanout = 0; PIN Node = 'output[28]'
+        Info: Total cell delay = 3.060 ns ( 68.17 % )
+        Info: Total interconnect delay = 1.429 ns ( 31.83 % )
+Info: Longest tpd from source pin "IR[12]" to destination pin "output[13]" is 10.886 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.820 ns) = 0.820 ns; Loc. = PIN_AA10; Fanout = 8; PIN Node = 'IR[12]'
+    Info: 2: + IC(6.160 ns) + CELL(0.275 ns) = 7.255 ns; Loc. = LCCOMB_X15_Y35_N10; Fanout = 1; COMB Node = 'decoder3x8:Dec3to8Map|Equal7~1'
+    Info: 3: + IC(0.823 ns) + CELL(2.808 ns) = 10.886 ns; Loc. = PIN_B7; Fanout = 0; PIN Node = 'output[13]'
+    Info: Total cell delay = 3.903 ns ( 35.85 % )
+    Info: Total interconnect delay = 6.983 ns ( 64.15 % )
+Info: th for register "Counter:CountMap|output[2]" (data pin = "clr", clock pin = "clk") is -2.897 ns
+    Info: + Longest clock path from clock "clk" to destination register is 2.670 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P2; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.118 ns) + CELL(0.000 ns) = 1.117 ns; Loc. = CLKCTRL_G3; Fanout = 4; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.016 ns) + CELL(0.537 ns) = 2.670 ns; Loc. = LCFF_X1_Y32_N7; Fanout = 18; REG Node = 'Counter:CountMap|output[2]'
+        Info: Total cell delay = 1.536 ns ( 57.53 % )
+        Info: Total interconnect delay = 1.134 ns ( 42.47 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 5.833 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.872 ns) = 0.872 ns; Loc. = PIN_D1; Fanout = 4; PIN Node = 'clr'
+        Info: 2: + IC(4.451 ns) + CELL(0.510 ns) = 5.833 ns; Loc. = LCFF_X1_Y32_N7; Fanout = 18; REG Node = 'Counter:CountMap|output[2]'
+        Info: Total cell delay = 1.382 ns ( 23.69 % )
+        Info: Total interconnect delay = 4.451 ns ( 76.31 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 173 megabytes
+    Info: Processing ended: Sun Aug 14 15:18:17 2022
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

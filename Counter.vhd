@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity Counter is
+	port(clk, clr, inr: in std_logic;
+		 output: buffer std_logic_vector(3 downto 0));
+end Counter;
+
+architecture Counter of Counter is
+begin 
+	P1: process (clk)
+	begin
+	if(rising_edge(clk))then
+	if(clr = '1') then
+	output <= x"0";
+	elsif(inr = '1') then
+	output <= output + 1;
+	end if;
+	end if;
+	end process P1;
+end Counter;
